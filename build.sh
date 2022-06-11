@@ -1,7 +1,7 @@
 #!/bin/bash
 
-venv_name="tf_env"
-proj_name="tf_cli" 
+venv_name="tf14_env"
+proj_name="tf14_cli" 
 
 read -p "Would you like to build a virtual environment? [y/n default y]: " resp
 resp=${resp:-Y}

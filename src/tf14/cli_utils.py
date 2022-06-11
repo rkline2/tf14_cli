@@ -14,7 +14,7 @@ class PATH_UTILS(Enum):
     SCRIPT_COMMIT = "commit.sh"
     SCRIPT_PUSH = "push.sh"
     SCRIPT_CLEAN = "clean.sh"
-    LIB_NAME = "tf"
+    LIB_NAME = "tf14"
 
 @dataclass
 class CLI_Utils():

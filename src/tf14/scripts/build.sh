@@ -1,10 +1,10 @@
 #!/bin/bash
 
 echo -e "Initializing the directory..."
-terraform init
+terraform14 init
 
 echo -e "\nFormating the configuration..."
-terraform fmt
+terraform14 fmt
 
 echo -e "\nValidating the configuration..."
-terraform validate
+terraform14 validate

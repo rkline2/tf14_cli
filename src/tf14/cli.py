@@ -10,8 +10,8 @@ from .cli_utils import CLI_Utils
 @click.command()
 @click.option("-b", "--build", is_flag=True, help="Test and fmt .tf code.")
 @click.option("-c", "--commit", is_flag=True, help="Make commits to local repo.")
-@click.option("-p", "--push", is_flag=True, help="Push tf data to server.")
-@click.option("--clean", is_flag=True, help="Clean unnecessary tf files.")
+@click.option("-p", "--push", is_flag=True, help="Push tf14 data to server.")
+@click.option("--clean", is_flag=True, help="Clean unnecessary tf14 files.")
 def main(build, commit, push, clean) -> int:
     try:
         CLI = CLI_Utils()

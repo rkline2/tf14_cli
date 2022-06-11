@@ -1,8 +1,11 @@
 #!/bin/bash
 
-source tf_env/bin/activate # tmp
+venv_name="tf14_env"
+proj_name="tf14_cli" 
 
-read -p "Would you like to remove all python libraries associated to tf? [y/n default n]: " resp
+source ${venv_name}/bin/activate # tmp
+
+read -p "Would you like to remove all python libraries associated to ${proj_name}? [y/n default n]: " resp
 resp=${resp:-N}
 
 if [ ${resp^^} == 'Y' ]; then
@@ -12,15 +15,15 @@ if [ ${resp^^} == 'Y' ]; then
     pip uninstall -y -r .dev_req
 fi
 
-echo -e "\nUninstalling tf..."
-pip uninstall -y tf_cli
+echo -e "\nUninstalling ${proj_name}..."
+pip uninstall -y ${proj_name}
 
-echo -e "\nDestroying venv... " # tmp
-rm -rf tf_env/  
+echo -e "\nDestroying ${venv_name}... " # tmp
+rm -rf ${venv_name}/  
 
 echo -e "Clearing cache files..."
 rm -rf build/ dist/
-rm -rf src/tf_cli.egg-info/
+rm -rf src/${proj_name}.egg-info/
 
 deactivate # tmp
 
