@@ -109,7 +109,7 @@ venv/
 ENV/
 env.bak/
 venv.bak/
-tf_env/
+tf14_env/
 
 
 # Spyder project settings
