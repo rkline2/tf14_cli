@@ -1,6 +1,6 @@
 #!/bin/bash
 
-clean_cmd="tf14 --clean"
+clean_cmd="tf14 clean"
 
 echo -e "Creating infrastructure..."
 terraform14 apply

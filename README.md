@@ -1,17 +1,20 @@
-# Terraform CLI: KISS Style
+# Terraform 14 CLI: KISS Style
 
 ## Summary
 This is the design and implementation of providing simple and reliable terraform (`tf14`) commands for devs ops that build, commit and push `.tf` files. Terraform has hidden functionalities that devs may not be familar with. It shouldn't be the dev's responsibility to remember multiple commands every time they make a commit to terraform servers. That's why I decided to create a bash program orchestrated by python for devs to only remember a few commands.
 
 ```
-Usage: tf14 [OPTIONS]
+Usage: tf14 [OPTIONS] COMMAND [ARGS]...
 
 Options:
-  -b, --build   Test and fmt .tf code.
-  -c, --commit  Make commits to local repo.
-  -p, --push    Push tf14 data to server.
-  --clean       Clean unnecessary tf14 files.
-  --help        Show this message and exit.
+  --help  Show this message and exit.
+
+Commands:
+  apply  Apply tf14 data to server.
+  clean  Clean unnecessary tf14 files.
+  edit   Edit the provided helper files.
+  init   Test and fmt .tf code.
+  plan   Make plans to local repo.
 ```  
 
 
@@ -23,7 +26,7 @@ The main directory that requires attention is the __src/tf14__ directory:
 
 - __cli_utils.py__ - Creates essential utilities for `cli.py` that performs the system commands of the program.
 
-- __cli.py__ - Bootstrap function for `cli_utils.py`. This file mainly interacts with the user by running the command `tf14` and providing them `[OPTIONS] -b -c -p` in a pretty interface. 
+- __cli.py__ - Bootstrap function for `cli_utils.py`. This file mainly interacts with the user by running the command `tf14`. 
 
 
 ## How do I run the Program?
